@@ -2,13 +2,6 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 var request = require("superagent");
 
-//----------------------------------------------
-var token = "Mzk5OTI3Nzg3NTc1NzA1NjEx.DTUNVw.ZkzQDN4EOslVPJexWD8p03Cx7Lo"
-var prefix = "Crissu V2 "
-var discordbotsorgtoken = ""
-var discordpwtoken = ""
-//----------------------------------------------
-
 client.on("ready", () => {
     client.user.setPresence({game: {name: "nsfw help", type: 0}});
     console.log("I am ready!");
