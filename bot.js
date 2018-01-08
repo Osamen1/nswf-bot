@@ -8,7 +8,13 @@ client.on('ready', () => {
 client.on('message', message => {
     if (message.content === 'ping') {
     	message.reply('pong');
-  	}
+    try {
+        let commandFile = require(`./commands/${command}.js`);
+        commandFile.run(client, message, args);
+    } catch (err) {
+        console.error(err);
+    }
+ 
 });
 
 // THIS  MUST  BE  THIS  WAY
