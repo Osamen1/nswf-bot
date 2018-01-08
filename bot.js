@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-
+var request = require("superagent");
 //----------------------------------------------
 var token = ""
 var prefix = "nsfw "
