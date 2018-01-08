@@ -1,8 +1,9 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-client.on('ready', () => {
-    console.log('I am ready!');
+client.on("ready", () => {
+    client.user.setPresence({game: {name: "nsfw help", type: 0}});
+    console.log("I am ready!");
 });
 
 client.on('message', message => {
