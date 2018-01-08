@@ -6,10 +6,14 @@ client.on("ready", () => {
     console.log("I am ready!");
 });
 
-client.on('message', message => {
+client.on("message", message => {
     if (message.author.bot) return;
+    if (message.content.indexOf) !== 0) return;
     if (message.channel.type === "dm") return;
-    
+
+    const args = message.content.slice(length).trim().split(/ +/g);
+    const command = args.shift().toLowerCase();
+
     try {
         let commandFile = require(`./commands/${command}.js`);
         commandFile.run(client, message, args);
