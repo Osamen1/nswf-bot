@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-var request = require("superagent");
 
 client.on("ready", () => {
     client.user.setPresence({game: {name: "nsfw help", type: 0}});
