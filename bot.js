@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-var request = require("superagent");
+
 //----------------------------------------------
-var token = ""
+var token = "Mzk5OTI3Nzg3NTc1NzA1NjEx.DTUNVw.ZkzQDN4EOslVPJexWD8p03Cx7Lo"
 var prefix = "nsfw "
 var discordbotsorgtoken = ""
 var discordpwtoken = ""
@@ -11,89 +11,6 @@ var discordpwtoken = ""
 client.on("ready", () => {
     client.user.setPresence({game: {name: "nsfw help", type: 0}});
     console.log("I am ready!");
-
-    request
-        .post(`https://bots.discord.pw/api/bots/${client.user.id}/stats`)
-        .send(`{ "server_count": ${client.guilds.size},
-    "shards": [${client.guilds.size}],
-    "shard_count": ${client.guilds.size} }`)
-        .type('application/json')
-        .set('Authorization', discordpwtoken)
-        .set('Accept', 'application/json')
-        .end(err => {
-            if (err) return console.error(err);
-            console.log("Posted stats to bots.discord.pw!");
-        });
-    request
-        .post(`https://discordbots.org/api/bots/${client.user.id}/stats`)
-        .send(`{ "server_count": ${client.guilds.size},
-    "shards": [${client.guilds.size}],
-    "shard_count": ${client.guilds.size} }`)
-        .type('application/json')
-        .set('Authorization', discordbotsorgtoken)
-        .set('Accept', 'application/json')
-        .end(err => {
-            if (err) return console.error(err);
-            console.log("Posted stats to discordbots.org!");
-        });
-});
-
-client.on("guildCreate", guild => {
-    client.channels.get("397193015674011659").send(`New guild joined!\nName: ${guild.name}\nMember Count: ${guild.memberCount}.\nNow im in **${client.guilds.size}** guilds.`)
-
-    request
-        .post(`https://bots.discord.pw/api/bots/${client.user.id}/stats`)
-        .send(`{ "server_count": ${client.guilds.size},
-    "shards": [${client.guilds.size}],
-    "shard_count": ${client.guilds.size} }`)
-        .type('application/json')
-        .set('Authorization', discordpwtoken)
-        .set('Accept', 'application/json')
-        .end(err => {
-            if (err) return console.error(err);
-            console.log("Posted stats to bots.discord.pw!");
-        });
-    request
-        .post(`https://discordbots.org/api/bots/${client.user.id}/stats`)
-        .send(`{ "server_count": ${client.guilds.size},
-    "shards": [${client.guilds.size}],
-    "shard_count": ${client.guilds.size} }`)
-        .type('application/json')
-        .set('Authorization', discordbotsorgtoken)
-        .set('Accept', 'application/json')
-        .end(err => {
-            if (err) return console.error(err);
-            console.log("Posted stats to discordbots.org!");
-        });
-});
-
-client.on("guildDelete", guild => {
-    client.channels.get("397193015674011659").send(`Guild left...\nName: ${guild.name}\nMember Count: ${guild.memberCount}.\n\nNow im in **${client.guilds.size}** guilds.`)
-
-    request
-    .post(`https://bots.discord.pw/api/bots/${client.user.id}/stats`)
-    .send(`{ "server_count": ${client.guilds.size},
-"shards": [${client.guilds.size}],
-"shard_count": ${client.guilds.size} }`)
-    .type('application/json')
-    .set('Authorization', discordpwtoken)
-    .set('Accept', 'application/json')
-    .end(err => {
-        if (err) return console.error(err);
-        console.log("Posted stats to bots.discord.pw!");
-    });
-request
-    .post(`https://discordbots.org/api/bots/${client.user.id}/stats`)
-    .send(`{ "server_count": ${client.guilds.size},
-"shards": [${client.guilds.size}],
-"shard_count": ${client.guilds.size} }`)
-    .type('application/json')
-    .set('Authorization', discordbotsorgtoken)
-    .set('Accept', 'application/json')
-    .end(err => {
-        if (err) return console.error(err);
-        console.log("Posted stats to discordbots.org!");
-    });
 });
 
 client.on("message", message => {
@@ -111,7 +28,6 @@ client.on("message", message => {
         console.error(err);
     }
 });
-
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
