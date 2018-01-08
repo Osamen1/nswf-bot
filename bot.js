@@ -12,7 +12,6 @@ var discordpwtoken = ""
 client.on("ready", () => {
     client.user.setPresence({game: {name: "nsfw help", type: 0}});
     console.log("I am ready!");
-    });
 });
 
 client.on("message", message => {
