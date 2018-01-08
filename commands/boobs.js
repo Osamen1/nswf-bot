@@ -7,7 +7,6 @@ exports.run = (client, message, args) => {
     var min = 10000;
     var MathRan = Math.floor(Math.random() * (max - min + 0)) + min;
     var MathLoL = Math.round(MathRan);
-    } else {   
         var randomname = Math.floor(Math.random() * (99999999999999999999 - 11111111111111111111 + 0)) + 11111111111111111111;
         request.get("http://media.oboobs.ru/boobs_preview/" + MathLoL + ".jpg").then(r => {
             fs.writeFile(`${randomname}.jpg`, r.body)
