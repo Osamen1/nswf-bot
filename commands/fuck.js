@@ -2,8 +2,6 @@ const request = require('snekfetch');
 const fs = require("fs")
 const Discord = require("discord.js")
 exports.run = (client, message, args) => {
-    if (!message.channel.nsfw) return message.channel.send(":underage: NSFW Command. Please switch to NSFW channel in order to use this command.")
-
     var topics = [
         'cum',
         'cumshot',
