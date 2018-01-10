@@ -19,7 +19,6 @@ exports.run = (client, message, args) => {
 
     randomPuppy(sub)
             .then(url => {
-                message.channel.send(url).then(d => {
                 const embed = new Discord.RichEmbed()
                     .setColor(0xffa500)
                     .setImage(url)
