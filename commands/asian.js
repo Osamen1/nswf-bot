@@ -4,7 +4,7 @@ const fs = require("fs")
 
 exports.run = (client, message, args) => {
     var subreddits = [
-        'asian',
+        'asianboobs',
         'asiangirl',
         'asianporn'
     ]
