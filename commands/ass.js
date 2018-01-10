@@ -1,18 +1,22 @@
-const Discord = require("discord.js");
+const randomPuppy = require('random-puppy');
 const request = require('snekfetch');
 const fs = require("fs")
 
 exports.run = (client, message, args) => {
-    var max = 5244;
-    var min = 1000;
-    var MathRan = Math.floor(Math.random() * (max - min + 0)) + min;
-    var MathLoL = Math.round(MathRan); 
-		var randomname = Math.floor(Math.random() * (99999999999999999999 - 11111111111111111111 + 0)) + 11111111111111111111;
-        request.get("http://media.obutts.ru/butts_preview/0" + MathLoL + ".jpg").then(r => {
-            fs.writeFile(`${randomname}.jpg`, r.body)
-            message.channel.sendFile(r.body).then(d => {
-                fs.unlink(`./${randomname}.jpg`)
+    var subreddits = [
+        'ass',
+        'amateurass',
+        'assbitch'
+    ]
+    var sub = subreddits[Math.round(Math.random() * (subreddits.length - 1))];
+
+    randomPuppy(sub)
+            .then(url => {
+                var randomname = Math.floor(Math.random() * (99999999999999999999 - 11111111111111111111 + 0)) + 11111111111111111111;
+                request.get(url).then(r => {               
+                    fs.writeFile(`${randomname}.jpg`)
+                    message.channel.send(url).then(d => {
+                    })
             })
         })
-    }
 }
