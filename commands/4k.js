@@ -4,8 +4,8 @@ const fs = require("fs")
 
 exports.run = (client, message, args) => {
     var subreddits = [
-        'NSFW_Wallpapers',
-        'SexyWallpapers',
+        'NSFW4k',
+        '4kPorn',
         'HighResNSFW',
         'nsfw_hd',
         'UHDnsfw'
