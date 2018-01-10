@@ -16,7 +16,6 @@ exports.run = (client, message, args) => {
                 request.get(url).then(r => {
                     fs.writeFile(`${randomname}.jpg`, r.body)
                     message.channel.send(url)
-                    message.channel.sendFile(r.body).then(d => {
                         fs.unlink(`./${randomname}.jpg`)
                     })
             })
