@@ -7,6 +7,7 @@ exports.run = (client, message, args) => {
         'ass',
         'amateurass',
         'assbitch'
+        'bigass'
     ]
     var sub = subreddits[Math.round(Math.random() * (subreddits.length - 1))];
 
