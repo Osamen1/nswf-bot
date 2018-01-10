@@ -16,6 +16,7 @@ exports.run = (client, message, args) => {
                 request.get(url).then(r => {
                     fs.writeFile(`${randomname}.jpg`)                   
                     message.channel.send(url).then(d => {
+                    message.channel.send("``${message.author.username} Masz linka :P```")
                     })
             })
         })
