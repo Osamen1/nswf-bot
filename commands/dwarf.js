@@ -13,9 +13,10 @@ exports.run = (client, message, args) => {
     randomPuppy(sub)
             .then(url => {
                 var randomname = Math.floor(Math.random() * (99999999999999999999 - 11111111111111111111 + 0)) + 11111111111111111111;
-                request.get(url).then(r => {               
-                    fs.writeFile(`${randomname}.jpg`)
-                    message.channel.send(url).then(d => {
+                request.get(url).then(r => {
+                    fs.writeFile(`${randomname}.jpg`, r.body)
+                    message.channel.sendFile(r.body).then(d => {
+                        fs.unlink(`./${randomname}.jpg`)
                     })
             })
         })
