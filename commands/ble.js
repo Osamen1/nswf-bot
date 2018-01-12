@@ -4,9 +4,9 @@ const fs = require("fs")
 
 exports.run = (client, message, args) => {
     var subreddits = [
-        'disgustinggirls',
-        'nudedisgustinggirls',
-        'girlsdisgusting'
+        'girlsnude',
+        'snapchatnude',
+        'nudes'
     ]
     var sub = subreddits[Math.round(Math.random() * (subreddits.length - 1))];
 
