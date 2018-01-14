@@ -6,11 +6,11 @@ exports.run = (client, message, args) => {
     const Pornsearch = require('pornsearch').default.search(query);
         Pornsearch.gifs(1)
             .then(url => {
-                let gifrnd = gifs.map(gif => gif.url)
-                let embed = new Discord.RichEmbed()
-                    .setImage(gifrnd[Math.floor(Math.random() * gifrnd.length)])
-                message.channel.send({
-                    embed: embed
-                })
+                var randomname = Math.floor(Math.random() * (99999999999999999999 - 11111111111111111111 + 0)) + 11111111111111111111;
+                request.get(url).then(r => {               
+                    fs.writeFile(`${randomname}.gif`)
+                    message.channel.send(url).then(d => {
+                    })
             })
+        })
 }
