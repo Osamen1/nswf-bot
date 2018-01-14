@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
                 let gifrnd = gifs.map(gif => gif.url)
                 let embed = new Discord.RichEmbed()
                     .setImage(gifrnd[Math.floor(Math.random() * gifrnd.length)])
-                    message.channel.send(url){
+                message.channel.send({
                     embed: embed
                 })
             })
