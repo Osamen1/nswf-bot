@@ -4,7 +4,7 @@ var request = require("superagent");
 
 //----------------------------------------------
 var token = ""
-var prefix = "nsfw "
+var prefix = ""
 var discordbotsorgtoken = ""
 var discordpwtoken = ""
 //----------------------------------------------
