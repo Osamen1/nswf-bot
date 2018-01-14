@@ -1,22 +1,53 @@
+const { Command } = require('../../commando');
+const Discord = require('discord.js');
 const randomPuppy = require('random-puppy');
-const request = require('snekfetch');
-const fs = require("fs")
+const errors = require('../../assets/json/errors');
+const subreddits = [
+    "nsfw",
+    "porn",
+    "BonerMaterial",
+    "adorableporn",
+    "nsfw2",
+    "Sexy",
+    "NSFW_nospam"
+]
 
-exports.run = (client, message, args) => {
-    var subreddits = [
-        'girlsnude',
-        'snapchatnude',
-        'nudes'
-    ]
-    var sub = subreddits[Math.round(Math.random() * (subreddits.length - 1))];
 
-    randomPuppy(sub)
+module.exports = class NSFWCommand extends Command {
+    constructor(client) {
+        super(client, {
+            name: 'nsfw',
+            aliases: ['porn'],
+            group: 'nsfw',
+            memberName: 'nsfw',
+            guildOnly: true,
+            description: 'Finds porn for you!',
+            details: 'This command can only be used in NSFW channels!',
+            examples: ['~nsfw'],
+            throttling: {
+                usages: 1,
+                duration: 3
+            }
+        });
+    }
+
+    run(message) {
+        var errMessage = errors[Math.round(Math.random() * (errors.length - 1))];
+        if (!message.channel.nsfw) {
+            message.react('💢');
+            return message.channel.send(errMessage);
+        }
+
+        var randSubreddit = subreddits[Math.round(Math.random() * (subreddits.length - 1))];
+
+        randomPuppy(randSubreddit)
             .then(url => {
-                var randomname = Math.floor(Math.random() * (99999999999999999999 - 11111111111111111111 + 0)) + 11111111111111111111;
-                request.get(url).then(r => {               
-                    fs.writeFile(`${randomname}.jpg`)
-                    message.channel.send(url).then(d => {
-                    })
+                const embed = new Discord.MessageEmbed()
+                    .setFooter(`${randSubreddit}`)
+                    .setDescription(`[Image URL](${url})`)   
+                    .setImage(url)
+                    .setColor('#CEA0A6');
+                return message.channel.send({ embed });
             })
-        })
+    }
 }
