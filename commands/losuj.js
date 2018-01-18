@@ -19,9 +19,6 @@ exports.run = (client, message, args) => {
         let gifrnd = gifs.map(gif => gif.url)
         if (message.mentions.users.first()) {
             let embed = new Discord.RichEmbed()
-            .setTitle(`**${message.author.username}** fucked ${message.mentions.users.first().username}`)
-        } else {
-            let embed = new Discord.RichEmbed()
             .setTitle(`**${message.author.username}** wylosował bana :(**`)
             .setColor(0xFFA500)
             message.channel.send({
