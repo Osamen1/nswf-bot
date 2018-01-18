@@ -1,6 +1,6 @@
 const sql = require('sqlite');
 sql.open('./stats.sqlite');
-sql.run('CREATE TABLE IF NOT EXISTS players (playerID, wins, loses, plays, playerName, playerDiscriminator)');
+sql.run('(playerID, wins, loses, plays, playerName, playerDiscriminator)');
 
 exports.run = function(message, args) {
   var id = message.author.id;
