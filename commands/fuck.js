@@ -27,7 +27,7 @@ exports.run = (client, message, args) => {
             })
         } else {
             let embed = new Discord.RichEmbed()
-            .setTitle(`**${message.author.username}** fucked **${client.user.username}**`)
+            .setTitle(`**${message.author.username}** fucked **${random.user.username}**`)
             .setImage(gifrnd[Math.floor(Math.random() * gifrnd.length)])
             .setColor(0xFFA500)
             message.channel.send({
