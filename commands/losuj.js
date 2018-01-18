@@ -20,7 +20,6 @@ exports.run = (client, message, args) => {
         if (message.mentions.users.first()) {
             let embed = new Discord.RichEmbed()
             .setTitle(`**${message.author.username}** fucked ${message.mentions.users.first().username}`)
-            })
         } else {
             let embed = new Discord.RichEmbed()
             .setTitle(`**${message.author.username}** wylosował bana :(**`)
