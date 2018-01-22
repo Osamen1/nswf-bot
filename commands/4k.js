@@ -1,7 +1,7 @@
 const randomPuppy = require('random-puppy');
 const request = require('snekfetch');
 const fs = require("fs")
-
+  if (message.channel.nsfw === true)
 exports.run = (client, message, args) => {
     var subreddits = [
         'NSFW4k',
@@ -16,7 +16,6 @@ exports.run = (client, message, args) => {
             .then(url => {
                 var randomname = Math.floor(Math.random() * (99999999999999999999 - 11111111111111111111 + 0)) + 11111111111111111111;
                 request.get(url).then(r => {               
-    if (message.channel.nsfw)
                     fs.writeFile(`${randomname}.jpg`)
                     message.channel.send(url).then(d => {
                     })
