@@ -3,7 +3,6 @@ const request = require('snekfetch');
 const fs = require("fs")
 
 exports.run = (client, message, args) => {
-    if (message.channel.nsfw)
     var subreddits = [
         'NSFW4k',
         '4kPorn',
@@ -17,6 +16,7 @@ exports.run = (client, message, args) => {
             .then(url => {
                 var randomname = Math.floor(Math.random() * (99999999999999999999 - 11111111111111111111 + 0)) + 11111111111111111111;
                 request.get(url).then(r => {               
+    if (message.channel.nsfw)
                     fs.writeFile(`${randomname}.jpg`)
                     message.channel.send(url).then(d => {
                     })
