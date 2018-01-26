@@ -1,8 +1,9 @@
 const randomPuppy = require('random-puppy');
 const request = require('snekfetch');
 const fs = require("fs")
-  if (message.channel.nsfw === true)
 exports.run = (client, message, args) => {
+    if (!message.channel.tak) return message.channel.send(":underage: NSFW Command. Please switch to NSFW channel in order to use this command.")
+
     var subreddits = [
         'NSFW4k',
         '4kPorn',
