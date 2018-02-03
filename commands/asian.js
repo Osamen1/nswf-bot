@@ -6,7 +6,7 @@ exports.run = (client, message, args) => {
     var subreddits = [
         'asianboobs',
         'asian',
-        'asianporn'
+        'asianbeauty'
     ]
     var sub = subreddits[Math.round(Math.random() * (subreddits.length - 1))];
 
