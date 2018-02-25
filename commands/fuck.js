@@ -2,6 +2,7 @@ const request = require('snekfetch');
 const fs = require("fs")
 const Discord = require("discord.js")
 exports.run = (client, message, args) => {
+      if (message.channel.nsfw === false) return message.reply(":warning: Ten kanał nie służy do tego :).");
     var topics = [
         'cum',
         'cumshot',
