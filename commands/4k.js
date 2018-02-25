@@ -2,7 +2,7 @@ const randomPuppy = require('random-puppy');
 const request = require('snekfetch');
 const fs = require("fs")
 exports.run = (client, message, args) => {
-    if (!message.channel.nsfw) return message.channel.send(":underage: Możesz używać tej komendy tylko na kanale nsfw.")
+  if (message.channel.nsfw === false) return message.reply(":warning: This channel isn't marked as NSFW.");
 
     var subreddits = [
         'NSFW4k',
