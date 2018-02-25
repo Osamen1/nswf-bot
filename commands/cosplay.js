@@ -5,9 +5,7 @@ const fs = require("fs")
 exports.run = (client, message, args) => {
       if (message.channel.nsfw === false) return message.reply(":warning: Ten kanał nie służy do tego :).");
     var subreddits = [
-        'sexycosplay',
-        'girlscosplay',
-        'nudescosplay'
+        'SexyCosplayerGirls'
     ]
     var sub = subreddits[Math.round(Math.random() * (subreddits.length - 1))];
 
