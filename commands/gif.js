@@ -4,6 +4,7 @@ const fs = require("fs")
 const Discord = require('discord.js');
 
 exports.run = (client, message, args) => {
+      if (message.channel.nsfw === false) return message.reply(":warning: Ten kanał nie służy do tego :).");
     const subreddits = [
         "NSFW_GIF",
         "nsfw_gifs",
