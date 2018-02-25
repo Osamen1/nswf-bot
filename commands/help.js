@@ -1,2 +1,3 @@
 exports.run = (client, message, args) => {
+      if (message.channel.nsfw === false) return message.reply(":warning: Ten kanał nie służy do tego :).");
     message.channel.send("```NSFW Komendy:\n adultgifs\n asian\n asiansgonewild\n ass\n bdsm\n bonermaterial\n boobbounce\n boobgifs\n boobies\n boobs\n bustypetite\n cfnf\n changingrooms\n collegeamateurs\n cosplay\n datgap\n down\n facedownassup\n fuck\n gif\n ginger\n girlsinyogapants\n girlswithglasses\n gonewild\n guy\n hentai\n highresnsfw\n iwanttofuckher\n just18\n legalteens\n lingerie\n nsfw_gif\n nsfwcosplay\n nsfwhardcore\n o_faces\n old\n petitegirls\n pornhub\n pussy\n realgirls\n redhead\n sexyfrex\n stockings\n thighhighs\n tittydrop\n twingirls\n uhdnsfw\n\nInne Komendy: \n help```")}
