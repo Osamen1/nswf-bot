@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 
 exports.run = (client, message, args) => {
+      if (message.channel.nsfw === false) return message.reply(":warning: Ten kanał nie służy do tego :).");
     const query = args.join(' ')
     if (!query) return message.channel.send("Usage: nsfw.pornhub <search query>")
     const Pornsearch = require('pornsearch').default.search(query);
