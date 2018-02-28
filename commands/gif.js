@@ -24,4 +24,4 @@ exports.run = (client, message, args) => {
                     .setColor(0xffa500)
                     .setImage(url)
                     message.channel.send(url).then(d => {
-}
+})
