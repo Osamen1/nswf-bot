@@ -25,4 +25,5 @@ exports.run = (client, message, args) => {
                     .setImage(url)
                     message.channel.send(url).then(d => {
         })
+    })
 }
