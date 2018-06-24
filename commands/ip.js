@@ -2,7 +2,7 @@ const fs = require("fs")
 
     var app = require('express')();
 
-    app.get("/IP", (req, res) => {
+    app.get("IP", (req, res) => {
       console.log(req.ip) // "::ffff:127.0.0.1" ::ffff: is a subnet prefix for IPv4 (32 bit) 
       let ip = req.ip.split(':');
       console.log(ip[3]);
