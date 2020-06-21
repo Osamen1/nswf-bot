@@ -3,13 +3,12 @@
   "description": "Test",
   "version": "0.0.0",
   "main": "bot.js",
+    "engines": {
+    "node": "12.x"
+  }
   "scripts": {
     "start": "node bot.js"
   },
-    "engines": {
-    "node": "8.11.3"
-  }
-}
   "dependencies": {
     "discord.js": "11.1.0",
     "request": "2.81.0",
